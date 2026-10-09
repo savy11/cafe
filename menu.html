@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Simple Café</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Simple Café</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-padding">
+        <h1 class="page-title fade-in">Our Menu</h1>
+        
+        <div class="menu-filters fade-in">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+            <button class="filter-btn" data-filter="lunch">Lunch</button>
+            <button class="filter-btn" data-filter="drinks">Drinks</button>
+            <button class="filter-btn" data-filter="desserts">Desserts</button>
+        </div>
+
+        <section class="menu-grid fade-in">
+            <!-- Breakfast -->
+            <div class="menu-item card" data-category="breakfast">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Classic Pancakes</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Fluffy stacks served with maple syrup and fresh berries.</p>
+                </div>
+            </div>
+            <div class="menu-item card" data-category="breakfast">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Breakfast Bowl</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Greek yogurt, house-made granola, and seasonal fruits.</p>
+                </div>
+            </div>
+
+            <!-- Lunch -->
+            <div class="menu-item card" data-category="lunch">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Turkey Club Sandwich</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Roasted turkey, bacon, lettuce, and tomato on whole wheat.</p>
+                </div>
+            </div>
+            <div class="menu-item card" data-category="lunch">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Garden Salad</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Mixed greens, cherry tomatoes, cucumbers with vinaigrette.</p>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-item card" data-category="drinks">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>House Latte</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Smooth espresso balanced with steamed milk.</p>
+                </div>
+            </div>
+            <div class="menu-item card" data-category="drinks">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Iced Cold Brew</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Slow-steeped coffee served over ice.</p>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-item card" data-category="desserts">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Chocolate Chip Cookie</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Freshly baked, gooey on the inside.</p>
+                </div>
+            </div>
+            <div class="menu-item card" data-category="desserts">
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Carrot Cake</h3>
+                        <span class="price">$[Price]</span>
+                    </div>
+                    <p>Spiced cake with rich cream cheese frosting.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Simple Café. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
