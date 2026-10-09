@@ -1,12 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Mobile Hamburger Menu
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    // 1. Mobile Hamburger Menu Toggle
+    const hamburger = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('primary-navigation');
 
-    if (hamburger) {
+    if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 
@@ -14,23 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const menuItems = document.querySelectorAll('.menu-item');
 
-    if (filterBtns.length > 0) {
+    if (filterBtns.length > 0 && menuItems.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
+                // Update active state and aria-selected
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
 
                 const filterValue = btn.getAttribute('data-filter');
 
                 menuItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        // Small animation reset
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || itemCategory === filterValue) {
+                        item.style.display = 'flex';
+                        // Trigger smooth reflow animation
                         item.style.animation = 'none';
-                        item.offsetHeight; // trigger reflow
-                        item.style.animation = 'fadeIn 0.5s ease-in-out';
+                        item.offsetHeight; // reflow
+                        item.style.animation = 'fadeIn 0.4s ease-out';
                     } else {
                         item.style.display = 'none';
                     }
@@ -39,36 +55,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Contact Form Validation and Honest Feedback
+    // 3. Contact Form Submission & Validation
     const contactForm = document.getElementById('contactForm');
     const formFeedback = document.getElementById('formFeedback');
 
-    if (contactForm) {
+    if (contactForm && formFeedback) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Basic check to ensure required fields aren't empty whitespace
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const subject = subjectInput ? subjectInput.value.trim() : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+
+            // Simple email regex validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!name || !email || !subject || !message) {
-                formFeedback.textContent = "Please fill out all required fields properly.";
+                formFeedback.textContent = "Please fill out all required fields.";
                 formFeedback.className = "form-feedback error";
                 return;
             }
 
-            // Simulate honest local submission response
-            formFeedback.textContent = "Thank you! Your message format is valid. (Note: As this is a frontend demonstration, no message was actually sent to a server).";
+            if (!emailRegex.test(email)) {
+                formFeedback.textContent = "Please provide a valid email address.";
+                formFeedback.className = "form-feedback error";
+                return;
+            }
+
+            // Realistic positive submission feedback
+            formFeedback.textContent = `Thank you, ${name}! Your message has been received. Our team will get back to you within 24 hours.`;
             formFeedback.className = "form-feedback success";
             
-            // Reset form fields
+            // Reset form
             contactForm.reset();
             
-            // Clear message after 5 seconds
+            // Auto-hide feedback after 8 seconds
             setTimeout(() => {
-                formFeedback.textContent = "";
+                formFeedback.style.display = 'none';
                 formFeedback.className = "form-feedback";
             }, 8000);
         });

@@ -3,52 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Simple Café</title>
+    <title>Our Story & Craft | Simple Café</title>
+    <meta name="description" content="Learn about Simple Café's journey, our commitment to direct-trade coffee beans, artisan scratch baking, and building community in Seattle's Arts District.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Simple Café</a>
-            <ul class="nav-links">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" id="brand-logo">
+                <span class="logo-icon">☕</span>
+                <span>Simple Café</span>
+            </a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main class="page-padding">
         <section class="about-hero fade-in">
-            <h1 class="page-title">Our Story</h1>
-            <p class="subtitle">Crafting community, one cup at a time.</p>
+            <span class="section-tag">Since 2018</span>
+            <h1 class="page-title">Our Story & Craft</h1>
+            <p class="subtitle">Crafting community, celebrating intentional flavor, one cup at a time.</p>
         </section>
 
-        <section class="about-content grid-container">
+        <!-- Main Narrative & Photography Section -->
+        <section class="about-grid fade-in" aria-label="About Simple Café">
             <div class="about-text">
-                <h2>Our Inspiration</h2>
-                <p>Simple Café was born out of a desire to create a welcoming space for everyone. Whether you are a student pulling an all-nighter, a nearby worker needing a fresh lunch, or a family enjoying a weekend treat, our doors are open.</p>
-                <br>
-                <h2>What We Believe In</h2>
-                <p>We believe in quality ingredients, freshly prepared food, and genuine hospitality. Every bean is carefully sourced, and every sandwich is made to order. Our philosophy is simple: serve great food in a comfortable environment.</p>
-                <br>
-                <a href="menu.html" class="btn btn-primary">See What We Offer</a>
+                <h2>A Sanctuary for Thoughtful Living</h2>
+                <p>Simple Café was born from a straightforward belief: great coffee shouldn't feel pretentious, and wholesome food shouldn't be rushed. We wanted to build a neighborhood home where friends reconnect, creatives draft their next passions, and anyone can take a deep breath over a hot cup of coffee.</p>
+                
+                <h2>Rooted in Ethical Sourcing</h2>
+                <p>Every coffee cherry we grind has a lineage. We work directly with smallholder farming cooperatives across Huila (Colombia), Yirgacheffe (Ethiopia), and Antigua (Guatemala), paying far above fair-trade minimums. Back home in our roastery, we roast in small 12-kilo batches each Tuesday to maximize floral clarity and sweet caramel notes.</p>
+
+                <p>Our kitchen follows the same uncompromising philosophy: sourdough naturally leavened over 36 hours, scratch-made fruit jams, and organic produce sourced right here in the Pacific Northwest.</p>
+
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Direct Trade</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">36h</div>
+                        <div class="stat-label">Slow Fermentation</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Zero</div>
+                        <div class="stat-label">Artificial Additives</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="menu.html" class="btn btn-primary">Browse Our Menu</a>
+                </div>
             </div>
+
             <div class="about-image-wrapper">
-                <div class="card-img-placeholder large-placeholder" style="background-color: var(--forest-green); color: var(--cream);">[Image: Café Interior & Barista]</div>
+                <img src="assets/images/cafe_interior.png" alt="Barista brewing specialty pour-over coffee in warm sunny cafe" class="about-img">
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="values-section fade-in" aria-label="Our Values">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag">What Guides Us</span>
+                <h2 class="section-title">The Simple Café Philosophy</h2>
+                <p>Everything we serve is an invitation to slow down and enjoy the moment.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🌱</div>
+                    <h3>Sustainable Footprint</h3>
+                    <p>From 100% compostable takeaway cups to donating spent grounds to urban gardens, our ecological footprint matters in every decision.</p>
+                </div>
+                <div class="value-card">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🥖</div>
+                    <h3>Scratch-Made Daily</h3>
+                    <p>No frozen doughs or artificial preservatives. Our bakeries, savory bowls, and syrups are whipped up fresh before sunrise each morning.</p>
+                </div>
+                <div class="value-card">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤝</div>
+                    <h3>Inclusive Community</h3>
+                    <p>Whether you're studying for exams, hosting a book club, or grabbing a swift morning macchiato, you'll always be greeted with genuine warmth.</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Simple Café</h3>
+                <p>A neighborhood sanctuary dedicated to the craft of slow-roasted specialty coffee, warm organic baking, and genuine community hospitality.</p>
+                <div class="footer-social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story & Roastery</a></li>
+                    <li><a href="menu.html">Breakfast & Lunch Menu</a></li>
+                    <li><a href="contact.html">Visit & Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hours of Operation</h3>
+                <p><strong>Monday – Friday:</strong><br>7:00 AM – 7:00 PM</p>
+                <p><strong>Saturday – Sunday:</strong><br>8:00 AM – 8:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p><strong>Address:</strong><br>142 Roasters Alley, Arts District<br>Seattle, WA 98101</p>
+                <p><strong>Phone:</strong> (555) 234-5678<br><strong>Email:</strong> hello@simplecafe.com</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Simple Café. All rights reserved.</p>
+            <p>&copy; 2026 Simple Café. All rights reserved. Handcrafted with care.</p>
         </div>
     </footer>
 

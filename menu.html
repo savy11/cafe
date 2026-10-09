@@ -3,124 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Simple Café</title>
+    <title>Our Menu | Simple Café</title>
+    <meta name="description" content="Explore our seasonal menu featuring artisan breakfast stacks, wholesome lunch sandwiches, handcrafted espresso drinks, and fresh baked pastries.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Simple Café</a>
-            <ul class="nav-links">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" id="brand-logo">
+                <span class="logo-icon">☕</span>
+                <span>Simple Café</span>
+            </a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html" class="active">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main class="page-padding">
-        <h1 class="page-title fade-in">Our Menu</h1>
+        <section class="section-header fade-in">
+            <span class="section-tag">Made Fresh Every Morning</span>
+            <h1 class="page-title">Seasonal Café Menu</h1>
+            <p>From single-origin pours to scratch-baked artisan goods, crafted with pure organic ingredients.</p>
+        </section>
         
-        <div class="menu-filters fade-in">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="breakfast">Breakfast</button>
-            <button class="filter-btn" data-filter="lunch">Lunch</button>
-            <button class="filter-btn" data-filter="drinks">Drinks</button>
-            <button class="filter-btn" data-filter="desserts">Desserts</button>
+        <!-- Filter Controls -->
+        <div class="menu-filters fade-in" role="tablist" aria-label="Menu category filters">
+            <button class="filter-btn active" data-filter="all" id="filter-all" role="tab" aria-selected="true">All Offerings</button>
+            <button class="filter-btn" data-filter="breakfast" id="filter-breakfast" role="tab" aria-selected="false">Breakfast</button>
+            <button class="filter-btn" data-filter="lunch" id="filter-lunch" role="tab" aria-selected="false">Lunch</button>
+            <button class="filter-btn" data-filter="drinks" id="filter-drinks" role="tab" aria-selected="false">Coffee & Drinks</button>
+            <button class="filter-btn" data-filter="desserts" id="filter-desserts" role="tab" aria-selected="false">Bakery & Sweets</button>
         </div>
 
-        <section class="menu-grid fade-in">
-            <!-- Breakfast -->
-            <div class="menu-item card" data-category="breakfast">
+        <!-- Menu Grid -->
+        <section class="menu-grid fade-in" id="menu-items-container" aria-label="Café Menu Items">
+            
+            <!-- Breakfast 1: Avocado Toast -->
+            <article class="menu-item card" data-category="breakfast">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/avocado_toast.png" alt="Artisan avocado smash on toasted sourdough bread" class="card-img">
+                    <span class="card-badge">Popular</span>
+                </div>
                 <div class="card-content">
                     <div class="menu-header">
-                        <h3>Classic Pancakes</h3>
-                        <span class="price">$[Price]</span>
+                        <h3>Avocado Smash Toast</h3>
+                        <span class="price">$10.50</span>
                     </div>
-                    <p>Fluffy stacks served with maple syrup and fresh berries.</p>
+                    <p>Smashed ripe Hass avocado on organic rustic sourdough, shaved radishes, heirloom cherry tomatoes, pumpkin seeds, microgreens, and Maldon flakes.</p>
+                    <span class="dietary-tag">🌱 Vegan • Organic Sourdough</span>
                 </div>
-            </div>
-            <div class="menu-item card" data-category="breakfast">
-                <div class="card-content">
-                    <div class="menu-header">
-                        <h3>Breakfast Bowl</h3>
-                        <span class="price">$[Price]</span>
-                    </div>
-                    <p>Greek yogurt, house-made granola, and seasonal fruits.</p>
-                </div>
-            </div>
+            </article>
 
-            <!-- Lunch -->
-            <div class="menu-item card" data-category="lunch">
+            <!-- Breakfast 2: Classic Pancakes -->
+            <article class="menu-item card" data-category="breakfast">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/pancakes.png" alt="Stack of fluffy buttermilk pancakes with maple syrup and berries" class="card-img">
+                </div>
                 <div class="card-content">
                     <div class="menu-header">
-                        <h3>Turkey Club Sandwich</h3>
-                        <span class="price">$[Price]</span>
+                        <h3>Fluffy Buttermilk Pancakes</h3>
+                        <span class="price">$11.75</span>
                     </div>
-                    <p>Roasted turkey, bacon, lettuce, and tomato on whole wheat.</p>
+                    <p>Triple-stacked golden pancakes served with whipped sweet butter, pure Vermont maple syrup, and fresh handpicked seasonal berries.</p>
+                    <span class="dietary-tag">🥞 Vegetarian • All-Day Breakfast</span>
                 </div>
-            </div>
-            <div class="menu-item card" data-category="lunch">
-                <div class="card-content">
-                    <div class="menu-header">
-                        <h3>Garden Salad</h3>
-                        <span class="price">$[Price]</span>
-                    </div>
-                    <p>Mixed greens, cherry tomatoes, cucumbers with vinaigrette.</p>
-                </div>
-            </div>
+            </article>
 
-            <!-- Drinks -->
-            <div class="menu-item card" data-category="drinks">
+            <!-- Breakfast 3: Granola Bowl -->
+            <article class="menu-item card" data-category="breakfast">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/breakfast_bowl.png" alt="Greek yogurt harvest breakfast bowl with berries and granola" class="card-img">
+                </div>
                 <div class="card-content">
                     <div class="menu-header">
-                        <h3>House Latte</h3>
-                        <span class="price">$[Price]</span>
+                        <h3>Morning Harvest Bowl</h3>
+                        <span class="price">$9.50</span>
                     </div>
-                    <p>Smooth espresso balanced with steamed milk.</p>
+                    <p>Creamy organic Greek yogurt layered with house-toasted honey almond granola, chia seeds, fresh strawberries, blueberries, and raw local honey.</p>
+                    <span class="dietary-tag">🌾 Gluten-Free Option • High Protein</span>
                 </div>
-            </div>
-            <div class="menu-item card" data-category="drinks">
-                <div class="card-content">
-                    <div class="menu-header">
-                        <h3>Iced Cold Brew</h3>
-                        <span class="price">$[Price]</span>
-                    </div>
-                    <p>Slow-steeped coffee served over ice.</p>
-                </div>
-            </div>
+            </article>
 
-            <!-- Desserts -->
-            <div class="menu-item card" data-category="desserts">
+            <!-- Lunch 1: Turkey Club -->
+            <article class="menu-item card" data-category="lunch">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/club_sandwich.png" alt="Smoked turkey club sandwich with bacon and fresh greens" class="card-img">
+                    <span class="card-badge">Chef Special</span>
+                </div>
                 <div class="card-content">
                     <div class="menu-header">
-                        <h3>Chocolate Chip Cookie</h3>
-                        <span class="price">$[Price]</span>
+                        <h3>Smoked Turkey Club</h3>
+                        <span class="price">$13.50</span>
                     </div>
-                    <p>Freshly baked, gooey on the inside.</p>
+                    <p>Slow-roasted herb turkey breast, applewood bacon, ripe vine tomatoes, crisp butter lettuce, and house herb aioli on toasted multigrain bread.</p>
+                    <span class="dietary-tag">🥪 Served with kettle sea salt chips</span>
                 </div>
-            </div>
-            <div class="menu-item card" data-category="desserts">
+            </article>
+
+            <!-- Lunch 2: Garden Salad -->
+            <article class="menu-item card" data-category="lunch">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/garden_salad.png" alt="Vibrant Mediterranean garden salad with cherry tomatoes and cucumbers" class="card-img">
+                </div>
                 <div class="card-content">
                     <div class="menu-header">
-                        <h3>Carrot Cake</h3>
-                        <span class="price">$[Price]</span>
+                        <h3>Garden Harvest Salad</h3>
+                        <span class="price">$11.25</span>
                     </div>
-                    <p>Spiced cake with rich cream cheese frosting.</p>
+                    <p>Crisp mixed field greens, Persian cucumbers, sweet cherry tomatoes, shaved parmesan, Kalamata olives, and house lemon-herb vinaigrette.</p>
+                    <span class="dietary-tag">🥗 Vegetarian • Fresh & Light</span>
                 </div>
-            </div>
+            </article>
+
+            <!-- Drinks 1: Artisan Cappuccino -->
+            <article class="menu-item card" data-category="drinks">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/cappuccino.png" alt="Artisan cappuccino in ceramic mug with latte art" class="card-img">
+                    <span class="card-badge">House Blend</span>
+                </div>
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Artisan Cappuccino</h3>
+                        <span class="price">$4.75</span>
+                    </div>
+                    <p>Double shot of our signature Ethiopian single-origin roast, velvety microfoam milk, and a delicate dusting of aromatic cocoa powder.</p>
+                    <span class="dietary-tag">☕ Oat / Almond Milk Available (+0.75)</span>
+                </div>
+            </article>
+
+            <!-- Drinks 2: Iced Cold Brew -->
+            <article class="menu-item card" data-category="drinks">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/cold_brew.png" alt="Iced cold brew coffee in clear glass with ice and milk swirl" class="card-img">
+                </div>
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>20-Hour Iced Cold Brew</h3>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p>Slowly steeped in cold filtered water for 20 hours. Ultra-smooth, bold flavor with chocolate and caramel notes, poured over crystal ice.</p>
+                    <span class="dietary-tag">🧊 Refreshing • Low Acidity</span>
+                </div>
+            </article>
+
+            <!-- Desserts 1: Fudge Brownie -->
+            <article class="menu-item card" data-category="desserts">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/brownie.png" alt="Warm chocolate fudge brownie with cocoa dust" class="card-img">
+                    <span class="card-badge">Must Try</span>
+                </div>
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Warm Fudge Brownie</h3>
+                        <span class="price">$5.25</span>
+                    </div>
+                    <p>Decadent Valrhona 70% dark chocolate brownie warmed to order, boasting a glossy crackly crust and an irresistibly fudgy center.</p>
+                    <span class="dietary-tag">🍫 Pure Cocoa • Baked Daily</span>
+                </div>
+            </article>
+
+            <!-- Desserts 2: Choc Chip Cookie -->
+            <article class="menu-item card" data-category="desserts">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/choc_cookie.png" alt="Gooey sea salt chocolate chip cookie broken open" class="card-img">
+                </div>
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Sea Salt Choc Chip Cookie</h3>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p>Giant bakery cookie loaded with semi-sweet Belgian chocolate puddles, crispy golden edges, a chewy center, and flaky sea salt crystals.</p>
+                    <span class="dietary-tag">🍪 Fresh From The Oven</span>
+                </div>
+            </article>
+
+            <!-- Desserts 3: Carrot Cake -->
+            <article class="menu-item card" data-category="desserts">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/carrot_cake.png" alt="Slice of spiced carrot cake with cream cheese frosting" class="card-img">
+                </div>
+                <div class="card-content">
+                    <div class="menu-header">
+                        <h3>Spiced Velvet Carrot Cake</h3>
+                        <span class="price">$6.00</span>
+                    </div>
+                    <p>Traditional spiced sponge with freshly grated sweet carrots and crushed toasted walnuts, topped with silky vanilla cream cheese frosting.</p>
+                    <span class="dietary-tag">🥕 Nut-Spiced • House Classic</span>
+                </div>
+            </article>
+
         </section>
+
+        <!-- Dietary Note Banner -->
+        <div class="cta-banner" style="margin-top: 5rem; padding: 3rem 5%; background: var(--warm-beige-light); color: var(--dark-charcoal); border: 1px solid var(--warm-beige);">
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--coffee-brown);">Special Dietary Needs?</h3>
+            <p style="color: var(--muted-gray); max-width: 650px; margin: 0 auto 1.5rem auto;">We take food allergies seriously. Gluten-free bread, plant-based milks (Oat, Almond, Soy), and nut-free preparations can be accommodated. Please inform our barista upon ordering.</p>
+            <a href="contact.html" class="btn btn-outline-dark">Questions? Reach Out to Our Team</a>
+        </div>
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Simple Café</h3>
+                <p>A neighborhood sanctuary dedicated to the craft of slow-roasted specialty coffee, warm organic baking, and genuine community hospitality.</p>
+                <div class="footer-social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story & Roastery</a></li>
+                    <li><a href="menu.html">Breakfast & Lunch Menu</a></li>
+                    <li><a href="contact.html">Visit & Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hours of Operation</h3>
+                <p><strong>Monday – Friday:</strong><br>7:00 AM – 7:00 PM</p>
+                <p><strong>Saturday – Sunday:</strong><br>8:00 AM – 8:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p><strong>Address:</strong><br>142 Roasters Alley, Arts District<br>Seattle, WA 98101</p>
+                <p><strong>Phone:</strong> (555) 234-5678<br><strong>Email:</strong> hello@simplecafe.com</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Simple Café. All rights reserved.</p>
+            <p>&copy; 2026 Simple Café. All rights reserved. Handcrafted with care.</p>
         </div>
     </footer>
 

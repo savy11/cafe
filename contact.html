@@ -3,71 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Simple Café</title>
+    <title>Contact & Visit Us | Simple Café</title>
+    <meta name="description" content="Find directions, opening hours, and contact details for Simple Café in Seattle's Arts District. Drop by for coffee or send us a message.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Simple Café</a>
-            <ul class="nav-links">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" id="brand-logo">
+                <span class="logo-icon">☕</span>
+                <span>Simple Café</span>
+            </a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main class="page-padding">
-        <h1 class="page-title fade-in">Get in Touch</h1>
+        <section class="section-header fade-in">
+            <span class="section-tag">We'd Love to Hear From You</span>
+            <h1 class="page-title">Visit Us & Get in Touch</h1>
+            <p>Pull up a chair in our Arts District haven, or drop us a line below.</p>
+        </section>
         
-        <section class="contact-container grid-container fade-in">
+        <section class="contact-container fade-in" aria-label="Contact Information and Form">
+            <!-- Contact Details & Map Card -->
             <div class="contact-info">
-                <h2>Visit Us</h2>
-                <p><strong>Address:</strong><br>[Your Editable Café Address Here]</p>
-                <p><strong>Phone:</strong><br>[Editable Phone Number]</p>
-                <p><strong>Email:</strong><br>[Editable Email Address]</p>
+                <h2>Café Location & Hours</h2>
                 
-                <div class="map-placeholder">
-                    [Map Embed Placeholder: Configure with real location]
+                <div class="contact-info-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>142 Roasters Alley, Arts District<br>Seattle, WA 98101</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+15552345678" style="color: var(--coffee-accent); font-weight: 600;">(555) 234-5678</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:hello@simplecafe.com" style="color: var(--coffee-accent); font-weight: 600;">hello@simplecafe.com</a></p>
+                    </div>
+                </div>
+
+                <div class="hours-badge">
+                    <h4>🕒 Operating Hours</h4>
+                    <p><strong>Monday – Friday:</strong> 7:00 AM – 7:00 PM</p>
+                    <p><strong>Saturday – Sunday:</strong> 8:00 AM – 8:00 PM</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.82rem; color: var(--forest-green); font-weight: 600;">✨ Kitchen serves hot breakfast & lunch until 3:00 PM daily</p>
+                </div>
+
+                <!-- Map & Directions Card -->
+                <div class="map-container" aria-label="Location and transit details for Simple Café">
+                    <div class="map-styled-card">
+                        <span class="map-badge-pin">📍 Seattle Arts District</span>
+                        <h3>142 Roasters Alley</h3>
+                        <p>Corner of 1st Ave & Pine Street • 2 blocks from Waterfront Pier</p>
+                        <div class="transit-tips">
+                            <span>🚊 Streetcar: Pine St Stop (2 min walk)</span>
+                            <span>🚲 Free Customer Bike Racks Outside</span>
+                            <span>🚗 1-Hour Validated Parking Available</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Seattle+Arts+District" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1.2rem; padding: 0.55rem 1.3rem; font-size: 0.88rem;">Open in Google Maps ↗</a>
+                    </div>
                 </div>
             </div>
             
+            <!-- Contact Form -->
             <div class="contact-form-container">
-                <h2>Send a Message</h2>
-                <form id="contactForm" class="contact-form">
+                <h2>Send Us a Note</h2>
+                <p class="form-desc">Questions about catering, table reservations, private events, or general inquiries? Fill out the form and our team will get right back to you.</p>
+
+                <form id="contactForm" class="contact-form" novalidate>
                     <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Jane Doe" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" required>
                     </div>
+
                     <div class="form-group">
                         <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" name="subject" placeholder="e.g. Catering inquiry or feedback" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help you today?" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <p id="formFeedback" class="form-feedback"></p>
+
+                    <button type="submit" class="btn btn-primary" id="submit-contact-btn" style="width: 100%;">
+                        <span>Send Message</span>
+                    </button>
+                    
+                    <div id="formFeedback" class="form-feedback" role="alert"></div>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Simple Café</h3>
+                <p>A neighborhood sanctuary dedicated to the craft of slow-roasted specialty coffee, warm organic baking, and genuine community hospitality.</p>
+                <div class="footer-social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story & Roastery</a></li>
+                    <li><a href="menu.html">Breakfast & Lunch Menu</a></li>
+                    <li><a href="contact.html">Visit & Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hours of Operation</h3>
+                <p><strong>Monday – Friday:</strong><br>7:00 AM – 7:00 PM</p>
+                <p><strong>Saturday – Sunday:</strong><br>8:00 AM – 8:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p><strong>Address:</strong><br>142 Roasters Alley, Arts District<br>Seattle, WA 98101</p>
+                <p><strong>Phone:</strong> (555) 234-5678<br><strong>Email:</strong> hello@simplecafe.com</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Simple Café. All rights reserved.</p>
+            <p>&copy; 2026 Simple Café. All rights reserved. Handcrafted with care.</p>
         </div>
     </footer>
 

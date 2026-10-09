@@ -3,88 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Café | Good Coffee. Fresh Bites.</title>
-    <meta name="description" content="Welcome to Simple Café. Enjoy freshly brewed coffee and fresh bites in a cozy atmosphere.">
+    <title>Simple Café | Artisanal Coffee & Fresh Daily Bites</title>
+    <meta name="description" content="Experience artisanal coffee, fresh wholesome bites, and a warm neighborhood atmosphere at Simple Café. Ethically sourced and handcrafted daily in Seattle.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Simple Café</a>
-            <ul class="nav-links">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" id="brand-logo">
+                <span class="logo-icon">☕</span>
+                <span>Simple Café</span>
+            </a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Welcome Banner">
             <div class="hero-content fade-in">
-                <h1>Good Coffee. Fresh Bites. Better Moments.</h1>
-                <p>Welcome to your new favorite neighborhood spot. Whether you're here to study, catch up with friends, or just grab a quick bite, we have a seat waiting for you.</p>
+                <span class="hero-badge">✨ Handcrafted With Passion • Arts District</span>
+                <h1>Artisanal Coffee. Wholesome Bites. Better Moments.</h1>
+                <p>Welcome to your cozy neighborhood sanctuary. Whether you're settling in with a book, meeting dear friends, or grabbing a quick handcrafted brew on the go, our doors are always open for you.</p>
                 <div class="hero-buttons">
-                    <a href="menu.html" class="btn btn-primary">Explore Our Menu</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="menu.html" class="btn btn-primary" id="hero-menu-cta">Explore Our Menu</a>
+                    <a href="contact.html" class="btn btn-secondary" id="hero-visit-cta">Find Us & Hours</a>
                 </div>
             </div>
         </section>
 
-        <section class="featured section-padding">
-            <h2 class="section-title">Café Favorites</h2>
-            <div class="grid-container">
-                <div class="card">
-                    <div class="card-img-placeholder" style="background-color: var(--warm-beige);">[Image: Cappuccino]</div>
-                    <div class="card-content">
-                        <h3>Artisan Cappuccino</h3>
-                        <p>Rich espresso topped with deeply frothed milk.</p>
+        <!-- Perks / Highlights Strip -->
+        <section class="perks-strip" aria-label="Our Highlights">
+            <div class="perks-container">
+                <div class="perk-item">
+                    <div class="perk-icon">☕</div>
+                    <div>
+                        <h4>Single-Origin Beans</h4>
+                        <p>Direct-trade specialty beans roasted in small weekly batches for supreme aromatics.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-placeholder" style="background-color: var(--warm-beige);">[Image: Avocado Toast]</div>
-                    <div class="card-content">
-                        <h3>Avocado Smash Toast</h3>
-                        <p>Fresh avocado on sourdough with a sprinkle of sea salt.</p>
+                <div class="perk-item">
+                    <div class="perk-icon">🥐</div>
+                    <div>
+                        <h4>Baked In-House Daily</h4>
+                        <p>Artisan sourdough bread, golden butter pastries, and desserts fresh out of our ovens.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-img-placeholder" style="background-color: var(--warm-beige);">[Image: Brownie]</div>
-                    <div class="card-content">
-                        <h3>Warm Fudge Brownie</h3>
-                        <p>Decadent chocolate brownie served warm.</p>
+                <div class="perk-item">
+                    <div class="perk-icon">🌿</div>
+                    <div>
+                        <h4>Organic & Conscious</h4>
+                        <p>Locally sourced dairy, barista plant milks, and fresh produce from community growers.</p>
+                    </div>
+                </div>
+                <div class="perk-item">
+                    <div class="perk-icon">💻</div>
+                    <div>
+                        <h4>Cozy Hub & High-Speed WiFi</h4>
+                        <p>Ample power outlets, ergonomic sunny seating, and a leafy dog-friendly patio.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Featured Section -->
+        <section class="featured section-padding" aria-label="Featured Menu Items">
+            <div class="section-header">
+                <span class="section-tag">Curated Selections</span>
+                <h2 class="section-title">Café Favorites</h2>
+                <p>Loved by our neighborhood regulars and crafted to perfection every single morning.</p>
+            </div>
+            <div class="grid-container">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/cappuccino.png" alt="Artisan Cappuccino with creamy latte art" class="card-img">
+                        <span class="card-badge">Barista Pick</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Artisan Cappuccino</h3>
+                        <p>Double shot of rich espresso topped with silky, velvety textured microfoam and aromatic cocoa dusting.</p>
+                        <div class="card-footer">
+                            <span class="card-price">$4.75</span>
+                            <a href="menu.html" class="btn btn-outline-dark" style="padding: 0.4rem 1rem; font-size: 0.88rem;">Order in Menu</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/avocado_toast.png" alt="Avocado smash on artisan sourdough" class="card-img">
+                        <span class="card-badge">Chef's Special</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Avocado Smash Toast</h3>
+                        <p>Hand-smashed Hass avocado on toasted organic sourdough with shaved radishes, cherry tomatoes, and toasted pumpkin seeds.</p>
+                        <div class="card-footer">
+                            <span class="card-price">$10.50</span>
+                            <a href="menu.html" class="btn btn-outline-dark" style="padding: 0.4rem 1rem; font-size: 0.88rem;">Order in Menu</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/brownie.png" alt="Warm fudge brownie on dessert plate" class="card-img">
+                        <span class="card-badge">Fresh Baked</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Warm Fudge Brownie</h3>
+                        <p>Decadent Valrhona dark chocolate brownie served warm with a crackly glaze crust and a gooey molten center.</p>
+                        <div class="card-footer">
+                            <span class="card-price">$5.25</span>
+                            <a href="menu.html" class="btn btn-outline-dark" style="padding: 0.4rem 1rem; font-size: 0.88rem;">Order in Menu</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" aria-label="Customer Reviews">
+            <div class="section-header">
+                <span class="section-tag">Community Love</span>
+                <h2 class="section-title">Words From Our Regulars</h2>
+                <p>See why coffee enthusiasts and neighbors make Simple Café their everyday haven.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"The cappuccino here is hands down the best in the district. Smooth, perfectly balanced, and the baristas remember my name and order every morning."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EM</div>
+                        <div class="author-info">
+                            <h4>Elena Martinez</h4>
+                            <span>Graphic Designer & Regular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Their Avocado Smash Toast is culinary art, and the vibe is so tranquil for remote working. High-speed internet, natural sunlight, and sublime music."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JR</div>
+                        <div class="author-info">
+                            <h4>Julian Ross</h4>
+                            <span>Software Engineer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"The warm fudge brownies are dangerous! Pair that with their cold brew and you have the absolute best afternoon treat in town."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah Kensington</h4>
+                            <span>Local Resident</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action banner -->
+        <div class="cta-banner fade-in">
+            <h2>Ready to Taste the Difference?</h2>
+            <p>From morning espresso pick-me-ups to leisurely weekend brunches, we've got a seat reserved for you.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="menu.html" class="btn btn-secondary">Check Today's Menu</a>
+                <a href="contact.html" class="btn btn-primary" style="background-color: var(--caramel-gold); color: var(--dark-charcoal);">Find Directions</a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Simple Café</h3>
-                <p>Providing a simple and enjoyable way to explore quality coffee and food.</p>
+                <p>A neighborhood sanctuary dedicated to the craft of slow-roasted specialty coffee, warm organic baking, and genuine community hospitality.</p>
+                <div class="footer-social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+                </div>
             </div>
             <div class="footer-section">
-                <h3>Links</h3>
+                <h3>Explore</h3>
                 <ul>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story & Roastery</a></li>
+                    <li><a href="menu.html">Breakfast & Lunch Menu</a></li>
+                    <li><a href="contact.html">Visit & Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Follow Us</h3>
-                <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+                <h3>Hours of Operation</h3>
+                <p><strong>Monday – Friday:</strong><br>7:00 AM – 7:00 PM</p>
+                <p><strong>Saturday – Sunday:</strong><br>8:00 AM – 8:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p><strong>Address:</strong><br>142 Roasters Alley, Arts District<br>Seattle, WA 98101</p>
+                <p><strong>Phone:</strong> (555) 234-5678<br><strong>Email:</strong> hello@simplecafe.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Simple Café. All rights reserved.</p>
+            <p>&copy; 2026 Simple Café. All rights reserved. Handcrafted with care.</p>
         </div>
     </footer>
 
